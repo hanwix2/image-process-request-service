@@ -42,3 +42,5 @@ out/
 ### Claude Code ###
 .claude
 CLAUDE.md
+spec.md
+plan.md
