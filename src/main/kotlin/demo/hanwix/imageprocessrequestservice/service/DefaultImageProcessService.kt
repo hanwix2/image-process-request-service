@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional
 @Service
 class DefaultImageProcessService(
     private val imageProcessTaskRepository: ImageProcessTaskRepository,
+    private val outboxAppender: OutboxAppender,
     private val hashEncoder: HashEncoder
 ) : ImageProcessService {
 
@@ -26,6 +27,8 @@ class DefaultImageProcessService(
 
         val task = ImageProcessTask.create(imageUrl = request.imageUrl, imageUrlHash = hash)
         val savedTask = imageProcessTaskRepository.save(task)
+
+        outboxAppender.appendImageProcessRequest(savedTask.id, savedTask.imageUrl)
 
         return ImageProcessResponse(
             taskId = savedTask.id,

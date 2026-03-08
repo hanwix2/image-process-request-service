@@ -35,6 +35,7 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-testcontainers")
     testImplementation(platform("org.testcontainers:testcontainers-bom:1.20.6"))
     testImplementation("org.testcontainers:mysql")
+    testImplementation("org.testcontainers:kafka")
     testImplementation("org.testcontainers:junit-jupiter")
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
