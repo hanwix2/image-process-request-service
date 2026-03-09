@@ -68,7 +68,7 @@ class ImageProcessControllerTest {
             imageUrl = "https://example.com/image.jpg",
             status = "PENDING",
             workerJobId = null,
-            resultUrl = null,
+            resultMessage = null,
             createdAt = now,
             updatedAt = now
         )
@@ -97,7 +97,7 @@ class ImageProcessControllerTest {
             imageUrl = "https://example.com/image.jpg",
             status = "PROCESSING",
             workerJobId = "job-xyz",
-            resultUrl = null,
+            resultMessage = null,
             createdAt = now,
             updatedAt = now
         )

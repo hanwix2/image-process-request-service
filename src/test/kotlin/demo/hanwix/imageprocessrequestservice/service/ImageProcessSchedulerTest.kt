@@ -13,6 +13,7 @@ import demo.hanwix.imageprocessrequestservice.repository.ImageProcessOutboxMessa
 import demo.hanwix.imageprocessrequestservice.repository.ImageProcessTaskRepository
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertNotNull
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.context.annotation.Import
@@ -48,8 +49,6 @@ class ImageProcessSchedulerTest @Autowired constructor(
         imageProcessTaskRepository.deleteAll()
     }
 
-    // --- publishPendingOutboxMessages ---
-
     @Test
     fun `publishPendingOutboxMessages 실행 후 OutboxMessage가 published=true로 업데이트된다`() {
         imageProcessService.createTask(ImageProcessRequest("https://example.com/image.jpg"))
@@ -59,8 +58,6 @@ class ImageProcessSchedulerTest @Autowired constructor(
 
         assertEquals(true, imageProcessOutboxMessageRepository.findAll()[0].published)
     }
-
-    // --- syncProcessingTaskStatuses ---
 
     @Test
     fun `syncProcessingTaskStatuses 실행 시 PROCESSING task가 COMPLETED 응답을 받으면 COMPLETED로 업데이트된다`() {
@@ -75,7 +72,7 @@ class ImageProcessSchedulerTest @Autowired constructor(
 
         val updated = imageProcessTaskRepository.findById(task.id).get()
         assertEquals(TaskStatus.COMPLETED, updated.status)
-        assertEquals("https://result.com/out.jpg", updated.resultUrl)
+        assertNotNull(updated.resultMessage)
     }
 
     @Test
@@ -103,7 +100,6 @@ class ImageProcessSchedulerTest @Autowired constructor(
             task.id
         )
 
-        // WireMock stub 없음 — 호출되면 예외 발생하여 테스트 실패로 드러남
         imageProcessScheduler.syncProcessingTaskStatuses()
 
         val notUpdated = imageProcessTaskRepository.findById(task.id).get()

@@ -26,7 +26,7 @@ class ImageProcessTask private constructor(
     var workerJobId: String? = null,
 
     @Column(nullable = true, columnDefinition = "TEXT")
-    var resultUrl: String? = null,
+    var resultMessage: String? = null,
 
     @Column(nullable = false)
     val createdAt: LocalDateTime = LocalDateTime.now(),
@@ -45,9 +45,9 @@ class ImageProcessTask private constructor(
         this.updatedAt = LocalDateTime.now()
     }
 
-    fun complete(resultUrl: String) {
+    fun complete(resultMessage: String) {
         this.status = TaskStatus.COMPLETED
-        this.resultUrl = resultUrl
+        this.resultMessage = resultMessage
         this.updatedAt = LocalDateTime.now()
     }
 

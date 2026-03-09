@@ -17,7 +17,7 @@ class ImageProcessTaskTest {
         val request = createTask()
         assertEquals(TaskStatus.PENDING, request.status)
         assertNull(request.workerJobId)
-        assertNull(request.resultUrl)
+        assertNull(request.resultMessage)
     }
 
     @Test
@@ -29,12 +29,13 @@ class ImageProcessTaskTest {
     }
 
     @Test
-    fun `complete 호출 시 상태가 COMPLETED로 변경되고 resultUrl이 저장된다`() {
+    fun `complete 호출 시 상태가 COMPLETED로 변경되고 resultMessage가 저장된다`() {
         val request = createTask()
+        val resultMsg = "Image processed successfully"
         request.startProcessing("job-001")
-        request.complete("https://example.com/result.jpg")
+        request.complete(resultMsg)
         assertEquals(TaskStatus.COMPLETED, request.status)
-        assertEquals("https://example.com/result.jpg", request.resultUrl)
+        assertEquals(resultMsg, request.resultMessage)
     }
 
     @Test

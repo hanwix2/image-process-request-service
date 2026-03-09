@@ -8,7 +8,7 @@ data class ImageProcessTaskResponse(
     val imageUrl: String,
     val status: String,
     val workerJobId: String?,
-    val resultUrl: String?,
+    val resultMessage: String?,
     val createdAt: LocalDateTime,
     val updatedAt: LocalDateTime
 ) {
@@ -18,7 +18,7 @@ data class ImageProcessTaskResponse(
             imageUrl = task.imageUrl,
             status = task.status.name,
             workerJobId = task.workerJobId,
-            resultUrl = task.resultUrl,
+            resultMessage = task.resultMessage,
             createdAt = task.createdAt,
             updatedAt = task.updatedAt
         )
