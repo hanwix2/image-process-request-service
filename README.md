@@ -216,6 +216,7 @@ sequenceDiagram
 
 💡 **Status Sync 중 조회 실패**
 - `syncProcessingTaskStatuses()`의 Coroutine 블록 내에서 개별 작업의 상태 조회가 실패하더라도 `null`을 반환하고 `filterNotNull()`로 제외하여 나머지 작업의 정상 업데이트를 보장합니다.
+- API 호출 실패가 반복되면 알림 및 서킷 브레이커 등을 고려할 수 있습니다.
 
 💡 **PROCESSING 무한 대기 방지**
 - `createdAt`이 현재 시각 기준 1시간 이내인 작업만 상태 동기화 대상으로 포함합니다. 1시간이 초과된 작업은 조회 대상에서 제외되어 스케줄러 부하를 방지합니다.
