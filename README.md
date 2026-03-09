@@ -37,13 +37,14 @@
 ## 📍실행 방법
 
 ```bash
-# 인프라 및 애플리케이션 전체 실행 (최초 App 빌드 시 Gradle 의존성 다운로드로 인해 소요 시간이 길 수 있습니다.)
+# 인프라 및 애플리케이션 전체 실행
 docker compose up -d
 
 # 로컬 개발 (인프라만 실행 후 앱 별도 실행)
 docker compose up -d mysql kafka kafka-ui
 ./gradlew bootRun
 ```
+> 최초 App 빌드 시 Gradle 의존성 다운로드로 인해 소요 시간이 길 수 있습니다.
 
 | 서비스 | 호스트 포트 | 설명 |
 |--------|-----------|------|
