@@ -5,6 +5,7 @@ import demo.hanwix.imageprocessrequestservice.domain.ImageProcessTask
 import demo.hanwix.imageprocessrequestservice.domain.TaskStatus
 import demo.hanwix.imageprocessrequestservice.dto.ImageProcessRequest
 import demo.hanwix.imageprocessrequestservice.exception.DuplicateImageRequestException
+import demo.hanwix.imageprocessrequestservice.exception.TaskNotFoundException
 import demo.hanwix.imageprocessrequestservice.repository.ImageProcessOutboxMessageRepository
 import demo.hanwix.imageprocessrequestservice.repository.ImageProcessTaskRepository
 import org.junit.jupiter.api.Test
@@ -15,7 +16,6 @@ import org.springframework.context.annotation.Import
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Sort
 import org.springframework.transaction.annotation.Transactional
-import org.springframework.web.server.ResponseStatusException
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
 import kotlin.test.assertNotNull
@@ -96,11 +96,9 @@ class ImageProcessServiceTest @Autowired constructor(
     }
 
     @Test
-    fun `존재하지 않는 id로 getTask 호출 시 ResponseStatusException 404가 발생한다`() {
-        assertFailsWith<ResponseStatusException> {
+    fun `존재하지 않는 id로 getTask 호출 시 TaskNotFoundException이 발생한다`() {
+        assertFailsWith<TaskNotFoundException> {
             imageProcessService.getTask(999999L)
-        }.also { ex ->
-            assertEquals(404, ex.statusCode.value())
         }
     }
 }

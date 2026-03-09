@@ -233,6 +233,7 @@ imageprocessrequestservice/
 ├── repository/    Spring Data JPA 인터페이스
 ├── dto/           요청/응답 DTO
 ├── config/        인프라 설정 (Kafka, RestClient, Swagger)
+├── exception/     예외 처리 관련
 └── util/          범용 유틸리티 (HashEncoder)
 ```
 
