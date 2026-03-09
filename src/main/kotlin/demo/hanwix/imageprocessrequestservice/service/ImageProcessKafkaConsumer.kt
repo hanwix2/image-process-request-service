@@ -1,7 +1,6 @@
 package demo.hanwix.imageprocessrequestservice.service
 
 import demo.hanwix.imageprocessrequestservice.config.KafkaConfig
-import demo.hanwix.imageprocessrequestservice.service.ports.`in`.ImageProcessWorkerService
 import io.github.oshai.kotlinlogging.KotlinLogging
 import tools.jackson.databind.ObjectMapper
 import org.springframework.kafka.annotation.KafkaListener

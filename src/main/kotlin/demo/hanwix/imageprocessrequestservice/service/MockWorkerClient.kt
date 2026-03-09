@@ -1,6 +1,7 @@
 package demo.hanwix.imageprocessrequestservice.service
 
 import demo.hanwix.imageprocessrequestservice.dto.MockWorkerApiKeyResponse
+import demo.hanwix.imageprocessrequestservice.dto.MockWorkerJobStatusResponse
 import demo.hanwix.imageprocessrequestservice.dto.MockWorkerProcessResponse
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.beans.factory.annotation.Value
@@ -32,4 +33,10 @@ class MockWorkerClient(
             .body(mapOf("imageUrl" to imageUrl))
             .retrieve()
             .body(MockWorkerProcessResponse::class.java)!!
+
+    fun getJobStatus(jobId: String): MockWorkerJobStatusResponse =
+        mockWorkerRestClient.get()
+            .uri("/process/{jobId}", jobId)
+            .retrieve()
+            .body(MockWorkerJobStatusResponse::class.java)!!
 }

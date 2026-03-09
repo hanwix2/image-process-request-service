@@ -10,7 +10,6 @@ import demo.hanwix.imageprocessrequestservice.config.TestcontainersConfiguration
 import demo.hanwix.imageprocessrequestservice.domain.ImageProcessTask
 import demo.hanwix.imageprocessrequestservice.domain.TaskStatus
 import demo.hanwix.imageprocessrequestservice.repository.ImageProcessTaskRepository
-import demo.hanwix.imageprocessrequestservice.service.ports.`in`.ImageProcessWorkerService
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
