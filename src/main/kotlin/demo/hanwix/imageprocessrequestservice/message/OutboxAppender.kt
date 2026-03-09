@@ -1,4 +1,4 @@
-package demo.hanwix.imageprocessrequestservice.service
+package demo.hanwix.imageprocessrequestservice.message
 
 import demo.hanwix.imageprocessrequestservice.config.KafkaConfig
 import demo.hanwix.imageprocessrequestservice.domain.ImageProcessOutboxMessage

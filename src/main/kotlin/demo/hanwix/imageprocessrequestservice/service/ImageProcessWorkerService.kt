@@ -1,5 +1,6 @@
 package demo.hanwix.imageprocessrequestservice.service
 
+import demo.hanwix.imageprocessrequestservice.client.MockWorkerClient
 import demo.hanwix.imageprocessrequestservice.repository.ImageProcessTaskRepository
 import jakarta.transaction.Transactional
 import org.springframework.stereotype.Service

@@ -1,4 +1,4 @@
-package demo.hanwix.imageprocessrequestservice.service
+package demo.hanwix.imageprocessrequestservice.client
 
 import demo.hanwix.imageprocessrequestservice.dto.MockWorkerApiKeyResponse
 import demo.hanwix.imageprocessrequestservice.dto.MockWorkerJobStatusResponse

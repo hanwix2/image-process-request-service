@@ -6,7 +6,9 @@ import demo.hanwix.imageprocessrequestservice.dto.ImageProcessRequest
 import demo.hanwix.imageprocessrequestservice.dto.ImageProcessResponse
 import demo.hanwix.imageprocessrequestservice.dto.ImageProcessTaskResponse
 import demo.hanwix.imageprocessrequestservice.dto.MockWorkerJobStatusResponse
+import demo.hanwix.imageprocessrequestservice.client.MockWorkerClient
 import demo.hanwix.imageprocessrequestservice.exception.DuplicateImageRequestException
+import demo.hanwix.imageprocessrequestservice.message.OutboxAppender
 import demo.hanwix.imageprocessrequestservice.repository.ImageProcessTaskRepository
 import demo.hanwix.imageprocessrequestservice.util.HashEncoder
 import io.github.oshai.kotlinlogging.KotlinLogging

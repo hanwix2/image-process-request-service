@@ -1,4 +1,4 @@
-package demo.hanwix.imageprocessrequestservice.service
+package demo.hanwix.imageprocessrequestservice.scheduler
 
 import com.github.tomakehurst.wiremock.WireMockServer
 import com.github.tomakehurst.wiremock.client.WireMock.get
@@ -11,6 +11,7 @@ import demo.hanwix.imageprocessrequestservice.domain.TaskStatus
 import demo.hanwix.imageprocessrequestservice.dto.ImageProcessRequest
 import demo.hanwix.imageprocessrequestservice.repository.ImageProcessOutboxMessageRepository
 import demo.hanwix.imageprocessrequestservice.repository.ImageProcessTaskRepository
+import demo.hanwix.imageprocessrequestservice.service.ImageProcessService
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertNotNull

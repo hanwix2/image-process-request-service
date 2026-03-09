@@ -1,4 +1,4 @@
-package demo.hanwix.imageprocessrequestservice.service
+package demo.hanwix.imageprocessrequestservice.message
 
 import demo.hanwix.imageprocessrequestservice.config.TestcontainersConfiguration
 import demo.hanwix.imageprocessrequestservice.repository.ImageProcessOutboxMessageRepository

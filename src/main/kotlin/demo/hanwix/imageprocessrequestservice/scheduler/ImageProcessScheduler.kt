@@ -1,5 +1,7 @@
-package demo.hanwix.imageprocessrequestservice.service
+package demo.hanwix.imageprocessrequestservice.scheduler
 
+import demo.hanwix.imageprocessrequestservice.message.OutboxAppender
+import demo.hanwix.imageprocessrequestservice.service.ImageProcessService
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
 
