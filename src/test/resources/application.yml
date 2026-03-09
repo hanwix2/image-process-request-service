@@ -6,3 +6,8 @@ spring:
     bootstrap-servers: localhost:9092
     admin:
       fail-fast: false
+
+mockworker:
+  base-url: http://localhost:8080
+  candidate-name: test
+  email: test@test.com

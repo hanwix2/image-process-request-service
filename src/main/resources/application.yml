@@ -9,9 +9,14 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
-    show-sql: true
+    show-sql: false
   kafka:
     bootstrap-servers: localhost:9092
+
+mockworker:
+  base-url: https://dev.realteeth.ai/mock
+  candidate-name: test
+  email: test@test.com
 
 springdoc:
   swagger-ui:
